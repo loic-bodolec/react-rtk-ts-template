@@ -23,6 +23,10 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "test:watch": "react-scripts test --coverage --runInBand --watchAll",
+    "lint": "eslint --ext .ts --ext .tsx --fix",
+    "lint:check": "eslint .",
+    "prettier:write": "prettier --write **/*.{ts,tsx,json} && prettier --write *.{ts,tsx,json}",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -30,6 +34,26 @@
       "react-app",
       "react-app/jest"
     ]
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,ts,tsx}",
+      "!src/**/*.d.ts",
+      "!src/index.tsx",
+      "!src/App.tsx",
+      "!src/reportWebVitals.ts",
+      "!src/setupTests.ts"
+    ],
+    "coverageReporters": [
+      "html",
+      "text-summary"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "lines": 90,
+        "functions": 90
+      }
+    }
   },
   "browserslist": {
     "production": [
@@ -42,5 +66,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "prettier": "2.7.1"
   }
 }
