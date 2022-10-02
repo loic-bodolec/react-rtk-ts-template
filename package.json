@@ -1,6 +1,7 @@
 {
-  "name": "my-app",
+  "name": "react-rtk-ts-template",
   "version": "0.1.0",
+  "desciption": "This project was bootstrapped with Create React App, using the Redux and Redux Toolkit TS template.",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.5",
